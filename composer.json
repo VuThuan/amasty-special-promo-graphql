@@ -1,0 +1,39 @@
+{
+    "name": "scandipwa/amasty-special-promo-graphql",
+    "description": "Amasty Special Promo extension for ScandiPWA",
+    "version": "1.0.0",
+    "keywords": [
+        "magento2",
+        "module",
+        "scandipwa",
+        "pwa",
+        "amasty",
+        "promo",
+        "special promo"
+    ],
+    "support": {
+        "email": "info@scandiweb.com"
+    },
+    "require": {
+        "magento/magento2-base": "^2.3",
+        "amasty/module-special-promo-pro": "*"
+    },
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Deniss Dubinins",
+            "email": "denissd@scandiweb.com"
+        }
+    ],
+    "license": [
+        "OSL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "ScandiPWA\\AmastySpecialPromoGraphQl\\": "src/"
+        }
+    }
+}

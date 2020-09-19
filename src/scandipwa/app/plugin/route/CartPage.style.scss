@@ -1,0 +1,144 @@
+/**
+ * ScandiPWA - Progressive Web App for Magento
+ *
+ * Copyright © Scandiweb, Inc. All rights reserved.
+ * See LICENSE for license details.
+ *
+ * @license OSL-3.0 (Open Software License ("OSL") v. 3.0)
+ * @package scandipwa/base-theme
+ * @link https://github.com/scandipwa/base-theme
+ */
+
+.CartPage-DiscountBreakdowns {
+    @include desktop {
+        border-bottom: 1px solid var(--cart-page-divider-background);
+    }
+
+    > button {
+        padding: 0 1rem;
+
+        @include desktop() {
+            padding: 1.5rem 0;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            right: 1.5rem;
+
+            @include desktop() {
+                right: .5rem;
+            }
+        }
+    }
+
+    .ExpandableContent-Heading {
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .ExpandableContent-Content {
+        margin: 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0 0 0 1rem;
+    }
+
+    .ExpandableContent-Content_isContentExpanded {
+        opacity: 1;
+        max-height: 100%;
+    }
+}
+
+.CartPage-DiscountBreakdown {
+    align-items: center;
+    border-top: 1px solid var(--cart-page-divider-background);
+    display: none;
+    font-weight: 600;
+    font-size: 14px;
+    grid-row-gap: 1.5rem;
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+
+    &:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+    }
+
+    @include before-desktop {
+        border: 0;
+        margin-top: 0;
+        padding: 1rem;
+    }
+
+    @include desktop {
+        display: grid;
+    }
+
+    dd {
+        text-align: right;
+    }
+
+    &_isMobile {
+        display: none;
+
+        @include before-desktop {
+            display: grid;
+        }
+    }
+}
+
+.CartPage-Summary {
+    .CartPage-DiscountBreakdowns {
+        @include before-desktop {
+            display: none;
+        }
+    }
+}
+
+.CartPage-Static {
+    .CartPage-DiscountBreakdowns {
+        @include desktop {
+            display: none;
+        }
+    }
+
+    .CartPage-DiscountBreakdown {
+        @include before-desktop {
+            display: grid;
+        }
+    }
+}
+
+.CheckoutOrderSummary {
+    .CartPage-DiscountBreakdowns {
+        border: 0;
+
+        .CartPage-ExpandableContentHeading {
+            font-weight: bold;
+        }
+
+        > button {
+            padding: 1rem 0;
+        }
+    }
+
+    .CartPage-DiscountBreakdown {
+        padding: 1rem 0;
+    }
+}
+
+.Header {
+    .CartOverlay-DiscountCoupon {
+        &::before {
+            content: '(';
+            font-weight: normal;
+        }
+
+        &::after {
+            content: ')';
+        }
+    }
+}

@@ -1,0 +1,24 @@
+#/**
+# * ScandiPWA - Progressive Web App for Magento
+# *
+# * Copyright © Scandiweb, Inc. All rights reserved.
+# * See LICENSE for license details.
+# *
+# * @license OSL-3.0 (Open Software License ("OSL") v. 3.0)
+# * @package scandipwa/base-theme
+# * @link https://github.com/scandipwa/base-theme
+# */
+
+extend interface TotalsObject {
+    discount_breakdowns(guestCartId: String): DiscountBreakdownType @resolver(class: "\\ScandiPWA\\AmastySpecialPromoGraphQl\\Model\\Resolver\\GetDiscountBreakdownsResolver") @doc(description: "Get discount breakdowns")
+}
+
+type DiscountBreakdownType {
+    discount_breakdowns_enabled: Boolean
+    discounts: [DiscountBreakdownDiscountsType]
+}
+
+type DiscountBreakdownDiscountsType {
+    rule_amount: String
+    rule_name: String
+}
